@@ -1,1021 +1,1367 @@
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
 
-   <!--- basic page needs
+    <!--- basic page needs
    ================================================== -->
-   <meta charset="utf-8">
-	<title>Ian Steenstra</title>
-	<meta name="description" content="">  
-	<meta name="author" content="">
+    <meta charset="utf-8">
+    <title>Ian Steenstra</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-   <!-- mobile specific metas
+    <!-- mobile specific metas
    ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
- 	<!-- CSS
+    <!-- CSS
    ================================================== -->
-   <link rel="stylesheet" href="css/base.css">  
-   <link rel="stylesheet" href="css/main.css">
-   <link rel="stylesheet" href="css/vendor.css">     
+    <link rel="stylesheet" href="css/flexboxgrid.min.css" type="text/css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/vendor.css">
 
-   <!-- script
-   ================================================== -->   
-	<script src="js/modernizr.js"></script>
-	<script src="js/pace.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+        
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0
+        }
+        
+        .mySlides {
+            display: none
+        }
+        
+        img {
+            vertical-align: middle;
+        }
+        /* Slideshow container */
+        
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+        /* Next & previous buttons */
+        
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        /* Position the "next button" to the right */
+        
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        /* On hover, add a black background color with a little bit see-through */
+        
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        /* Caption text */
+        
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+        /* Number text (1/3 etc) */
+        
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        /* The dots/bullets/indicators */
+        
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+        /* Fading animation */
+        
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        /* On smaller screens, decrease text size */
+        
+        @media only screen and (max-width: 300px) {
+            .prev,
+            .next,
+            .text {
+                font-size: 11px
+            }
+        }
+    </style>
 
-   <!-- favicons
+
+    <!-- script
+   ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- favicons
 	================================================== -->
-	<link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
 
 </head>
 
 <body id="top">
 
-	<!-- header 
+    <!-- header 
    ================================================== -->
-   <header>   	
-   	<div class="row">
+    <header>
+        <div class="row">
 
-   		<div class="top-bar">
-   			<a class="menu-toggle" href="#"><span>Menu</span></a>
+            <div class="top-bar">
+                <a class="menu-toggle" href="#"><span>Menu</span></a>
 
-	   		<div class="logo">
-		         <a href="index.html">Overview</a>
-		      </div>		      
+                <div class="logo">
+                    <a href="index.html">Overview</a>
+                </div>
 
-		   	<nav id="main-nav-wrap">
-					<ul class="main-navigation">
-						<li class="current"><a class="smoothscroll"  href="#intro" title="">Home</a></li>
-						<li><a class="smoothscroll"  href="#about" title="">About</a></li>
-						<li><a class="smoothscroll"  href="#work-experience" title="">Work Experience</a></li>
-						<li><a class="smoothscroll"  href="#research-experience" title="">Research Experience</a></li>
-						<li><a class="smoothscroll"  href="#projects" title="">Projects</a></li>					
-						<li><a class="smoothscroll"  href="#skills" title="">Contact</a></li>	
-						<li><a class="smoothscroll"  href="#publications" title="">Publications</a></li>		
-					</ul>
-				</nav>    		
-   		</div> <!-- /top-bar --> 
-   		
-   	</div> <!-- /row --> 		
-   </header> <!-- /header -->
+                <nav id="main-nav-wrap">
+                    <ul class="main-navigation">
+                        <li class="current"><a class="smoothscroll" href="#intro" title="">Home</a></li>
+                        <li><a class="smoothscroll" href="#about" title="">About Me</a></li>
+                        <li><a class="smoothscroll" href="#projects-roles" title="">Projects & Roles</a></li>
+                        <li><a class="smoothscroll" href="#skills" title="">Skills</a></li>
+                        <li><a class="smoothscroll" href="#work-experience" title="">Work Experience</a></li>
+                        <li><a class="smoothscroll" href="#education" title="">Education</a></li>
+                        <li><a class="smoothscroll" href="#research-experience" title="">Research Experience</a></li>
+                        <li><a class="smoothscroll" href="#publications" title="">Publications</a></li>
+                        <li><a class="smoothscroll" href="#articles" title="">Articles</a></li>
+                        <li><a class="smoothscroll" href="#contact" title="">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- /top-bar -->
 
-	<!-- intro section
+        </div>
+        <!-- /row -->
+    </header>
+    <!-- /header -->
+
+    <!-- intro section
    ================================================== -->
-   <section id="intro">   
+    <section id="intro">
 
-   	<div class="intro-overlay"></div>	
+        <div class="intro-overlay"></div>
 
-   	<div class="intro-content">
-   		<div class="row">
+        <div class="intro-content">
+            <div class="row">
 
-   			<div class="col-twelve">
+                <div class="col-twelve">
 
-	   			<h1>Ian Steenstra</h1>
+                    <h1>Ian Steenstra</h1>
 
-	   			<p class="intro-position">
-	   				<span>Software Engineer</span>
-	   			</p>
+                    <p class="intro-position">
+                        <span>Software Engineer</span>
+                    </p>
 
-	   			<a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
+                    <a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
 
-	   		</div>  
-   			
-   		</div>   		 		
-   	</div> <!-- /intro-content --> 
+                </div>
 
-   	<ul class="intro-social">        
-         <li><a href="https://github.com/IanSteenstra"><i class="fa fa-github"></i></a></li>
-         <li><a href="https://www.linkedin.com/in/ian-steenstra"><i class="fa fa-linkedin"></i></a></li>
-      </ul> <!-- /intro-social -->      	
+            </div>
+        </div>
+        <!-- /intro-content -->
 
-   </section> <!-- /intro -->
+        <ul class="intro-social">
+            <li><a href="https://github.com/IanSteenstra"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/ian-steenstra"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+        <!-- /intro-social -->
+
+    </section>
+    <!-- /intro -->
 
 
-   <!-- about section
+    <!-- about section
    ================================================== -->
-   <section id="about">  
+    <section id="about">
+        <div class="row center-xs">
+            <div class="col-twelve">
+                <h1>About Me</h1>
+                <div class="intro-info">
+                    <img src="images/profile-pic.jpg" alt="Profile Picture">
+                    <p class="lead">Hi! My name is Ian Steenstra and I am a Software Engineer on Wayfair's Notifications Content & Delivery team! I have a passion for working on software projects and research that are within the online education and mental health fields.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-   	<div class="row section-intro">
-   		<div class="col-twelve">
-
-   			<h5>About</h5>
-   			<h1>Hello World!</h1>
-
-   			<div class="intro-info">
-
-   				<img src="images/profile-pic.jpg" alt="Profile Picture">
-
-   				<p class="lead">Lorem ipsum Exercitation culpa qui dolor consequat exercitation fugiat laborum ex ea eiusmod ad do aliqua occaecat nisi ad irure sunt id pariatur Duis laboris amet exercitation veniam labore consectetur ea id quis eiusmod.</p>
-   			</div>   			
-
-   		</div>   		
-   	</div> <!-- /section-intro -->
-
-   	<div class="row about-content">
-
-   		<div class="col-six tab-full">
-
-   			<h3>Profile</h3>
-   			<p>Lorem ipsum Qui veniam ut consequat ex ullamco nulla in non ut esse in magna sint minim officia consectetur nisi commodo ea magna pariatur nisi cillum.</p>
-
-   			<ul class="info-list">
-   				<li>
-   					<strong>Fullname:</strong>
-   					<span>Juan Dela Cruz</span>
-   				</li>
-   				<li>
-   					<strong>Birth Date:</strong>
-   					<span>September 28, 1987</span>
-   				</li>
-   				<li>
-   					<strong>Job:</strong>
-   					<span>Freelancer, Frontend Developer</span>
-   				</li>
-   				<li>
-   					<strong>Website:</strong>
-   					<span>www.kardswebsite.com</span>
-   				</li>
-   				<li>
-   					<strong>Email:</strong>
-   					<span>me@kardswebsite.com</span>
-   				</li>
-
-   			</ul> <!-- /info-list -->
-
-   		</div>
-
-   		<div class="col-six tab-full">
-
-   			<h3>Skills</h3>
-   			<p>Lorem ipsum Qui veniam ut consequat ex ullamco nulla in non ut esse in magna sint minim officia consectetur nisi commodo ea magna pariatur nisi cillum.</p>
-
-				<ul class="skill-bars">
-				   <li>
-				   	<div class="progress percent90"><span>90%</span></div>
-				   	<strong>HTML5</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent85"><span>85%</span></div>
-				   	<strong>CSS3</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent70"><span>70%</span></div>
-				   	<strong>JQuery</strong>
-				   </li>
-				   <li>
-				   	<div class="progress percent95"><span>95%</span></div>
-				   	<strong>PHP</strong>
-				   </li>
-				   <li>
-
-				   	<div class="progress percent75"><span>75%</span></div>
-				   	<strong>Wordpress</strong>
-				   </li>
-      
-				</ul> <!-- /skill-bars -->		
-
-   		</div>
-
-   	</div>
-
-   	<div class="row button-section">
-   		<div class="col-twelve">
-   			<a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a>
-   			<a href="#" title="Download CV" class="button button-primary">Download CV</a>
-   		</div>   		
-   	</div>
-
-   </section> <!-- /process-->    
-
-
-   <!-- resume Section
+    <!-- projects-roles section
    ================================================== -->
-	<section id="resume" class="grey-section">
 
-		<div class="row section-intro">
-   		<div class="col-twelve">
-
-   			<h5>Resume</h5>
-   			<h1>More of my credentials.</h1>
-
-   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
-
-   		</div>   		
-   	</div> <!-- /section-intro--> 
-
-   	<div class="row resume-timeline">
-
-   		<div class="col-twelve resume-header">
-
-   			<h2>Work Experience</h2>
-
-   		</div> <!-- /resume-header -->
-
-   		<div class="col-twelve">
-
-   			<div class="timeline-wrap">
-
-   				<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<i class="fa fa-graduation-cap"></i>
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>UI Designer</h3>
-	   					<p>July 2015 - Present</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>Awesome Studio</h4>
-	   					<p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-	   			<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<i class="fa fa-graduation-cap"></i>
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>Front-end Developer</h3>
-	   					<p>July 2014 - June 2015</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>Super Cool Agency</h4>
-	   					<p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt.</p>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-	   			<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<i class="fa fa-graduation-cap"></i>
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>Web Designer</h3>
-	   					<p>May 2013 - June 2014</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>Great Designs Studio</h4>
-	   					<p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt.</p>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-   			</div> <!-- /timeline-wrap -->   			
-
-   		</div> <!-- /col-twelve -->
-   		
-   	</div> <!-- /resume-timeline -->
-   	
-   	<div class="row resume-timeline">
-
-   		<div class="col-twelve resume-header">
-
-   			<h2>Education</h2>
-
-   		</div> <!-- /resume-header -->
-
-   		<div class="col-twelve">
-
-   			<div class="timeline-wrap">
-
-   				<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<i class="fa fa-briefcase"></i>
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>Master Degree</h3>
-	   					<p>July 2015 - Present</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>University of Life</h4>
-	   					<p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-	   			<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<i class="fa fa-briefcase"></i>
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>Bachelor Degree</h3>
-	   					<p>July 2014 - June 2015</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>State Design University</h4>
-	   					<p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt.</p>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-	   			<div class="timeline-block">
-
-	   				<div class="timeline-ico">
-	   					<i class="fa fa-briefcase"></i>
-	   				</div>
-
-	   				<div class="timeline-header">
-	   					<h3>Bachelor Degree</h3>
-	   					<p>May 2013 - June 2014</p>
-	   				</div>
-
-	   				<div class="timeline-content">
-	   					<h4>Design College</h4>
-	   					<p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi incididunt.</p>
-	   				</div>
-
-	   			</div> <!-- /timeline-block -->
-
-   			</div> <!-- /timeline-wrap -->   			
-
-   		</div> <!-- /col-twelve -->
-   		
-   	</div> <!-- /resume-timeline -->
-		
-	</section> <!-- /features -->
-
-
-	<!-- Portfolio Section
+    <!-- skills section
    ================================================== -->
-	<section id="portfolio">
+    <section id="skills">
+        <div class="row center-xs">
+            <div class="col-six">
+                <div class="box">
+                    <h1>Skills</h1>
+                </div>
+            </div>
+        </div>
 
-		<div class="row section-intro">
-   		<div class="col-twelve">
+        <div class="row center-xs">
+            <div class="col-six">
+                <div class="box">
+                    <h3>Programming Languages</h3>
+                    <ul>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>PHP</li>
+                        <li>React.js</li>
+                        <li>Microsoft SQL Server</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h3>Distributed Computing</h3>
+                    <ul>
+                        <li>Kubernetes</li>
+                        <li>Docker</li>
+                        <li>Apache Kafka</li>
+                        <li>Apache Storm</li>
+                        <li>Akka</li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h3>Other</h3>
+                    <ul>
+                        <li>Google Big Query</li>
+                        <li>Django</li>
+                        <li>Google Cloud Platform</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-six">
+                <div class="box">
+                    <h3>Machine Learning & Data Science</h3>
+                    <ul>
+                        <li>Scikit-learn</li>
+                        <li>NumPy</li>
+                        <li>SciPy</li>
+                        <li>Pandas</li>
+                        <li>NLTK</li>
+                        <li>XGBoost</li>
+                        <li>Gensim</li>
+                        <li>Tensorflow</li>
+                        <li>Keras</li>
+                        <li>PyTorch</li>
+                        <li>Matplotlib</li>
+                        <li>Jupyter Notebook</li>
+                        <li>Google Colab</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-   			<h5>Portfolio</h5>
-   			<h1>Check Out Some of My Works.</h1>
+        <div class="download-section">
+            <div class="row center-xs">
+                <div class="col-four">
+                    <a href="#contact" title="Contact Me" class="button stroke smoothscroll">Contact Me</a>
+                </div>
+                <div class="col-four">
+                    <a href="/files/Resume.pdf" title="Download Resume" class="button button-secondary" download>Download Resume</a>
+                </div>
+                <div class="col-four">
+                    <a href="/files/CV.pdf" title="Download CV" class="button button-primary" download>Download CV</a>
+                </div>
+            </div>
+        </div>
 
-   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
 
-   		</div>   		
-   	</div> <!-- /section-intro--> 
+    </section>
 
-   	<div class="row portfolio-content">
+    <!-- work-experience section
+   ================================================== -->
+    <section id="work-experience" class="grey-section">
+        <div class="row work-experience-header">
+            <div class="col-twelve">
+                <h1>Work Experience</h1>
+            </div>
+        </div>
 
-   		<div class="col-twelve">
+        <div class="row work-experience-timeline">
+            <div class="col-twelve">
+                <div class="timeline-wrap">
+                    <div class="timeline-block">
+                        <div class="timeline-ico">
+                            <i class="fa fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-header">
+                            <h3>Software Engineer</h3>
+                            <p>October 2020 - Present</p>
+                        </div>
+                        <div class="timeline-content">
+                            <a href="https://www.wayfair.com">
+                                <h3>Wayfair</h3>
+                            </a>
+                            <dl>
+                                <li>Working as a collaborative team member on the Notifications Content and Delivery Team that owns the infrastructure which powers Wayfair’s billions of email, push and SMS notifications.</li>
+                                <li>Designing and implementing distributed systems that utilize Wayfair’s vast customer real-time and historical data to curate personalized notifications through the use of Kafka, Storm, Akka, Aerospike, and PowerMTA.</li>
+                            </dl>
+                        </div>
+                    </div>
+                    <!-- /timeline-block -->
 
-   			<!-- portfolio-wrapper -->
-	         <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
+                    <div class="timeline-block">
+                        <div class="timeline-ico">
+                            <i class="fa fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-header">
+                            <h3>Freelance Software Engineer</h3>
+                            <h4>(Machine Learning)</h4>
+                            <p>July 2020 - October 2020</p>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Upwork</h3>
+                            <a href="https://www.upwork.com/freelancers/~01687258b9097620b9">
+                                <h4 style="color:#FF0077;">Profile Link</h4>
+                            </a>
+                            <dl>
+                                <li>Developed an MVP app for a brand label recognizer, so that a brand’s image may act as a QR code to link to their website.</li>
+                                <li>Trained and used an autoregressive integrated moving average model to predict stock futures using data from Google BigQuery.</li>
+                            </dl>
+                        </div>
+                    </div>
+                    <!-- /timeline-block -->
 
-	         	<div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/liberty.jpg" alt="Liberty">
-	                  <a href="#modal-01" class="overlay">	                  	           
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-		     					       <h3 class="folio-title">Liberty</h3>	     					    
-		     					    	 <span class="folio-types">
-		     					       	  Graphic Design
-		     					       </span>
-		     					   </div>	                      	
-	                     </div>                    
-	                  </a>
-	               </div>	               
-	        		</div> <!-- /folio-item -->
+                    <div class="timeline-block">
+                        <div class="timeline-ico">
+                            <i class="fa fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-header">
+                            <h3>Software Engineer Intern</h3>
+                            <p>June 2019 - August 2019</p>
+                        </div>
+                        <div class="timeline-content">
+                            <a href="https://www.wayfair.com">
+                                <h3>Wayfair</h3>
+                            </a>
+                            <dl>
+                                <li>Created an automated bandit testing tool using PHP, React.js, and Jenkins</li>
+                                <li>The tool can generate over $300,000 in additional revenue in one day by strategically marketing emails to Wayfair’s millions of customers through a Java application I developed.</li>
+                            </dl>
+                        </div>
+                    </div>
+                    <!-- /timeline-block -->
 
-	        		<div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/shutterbug.jpg" alt="Shutterbug">
-	               	<a href="#modal-02" class="overlay">              		                  
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Shutterbug</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Web Design
-		     					      </span>		     		
-		     					   </div> 	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
+                    <div class="timeline-block">
+                        <div class="timeline-ico">
+                            <i class="fa fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-header">
+                            <h3>Data Analytics</h3>
+                            <h3>Engineer Intern</h3>
+                            <p>May 2018 - August 2018</p>
+                        </div>
+                        <div class="timeline-content">
+                            <a href="https://prattwhitney.com/">
+                                <h3>Pratt & Whitney</h3>
+                            </a>
+                            <dl>
+                                <li>Developed an MVP app for a brand label recognizer, so that a brand’s image may act as a QR code to link to their website.</li>
+                                <li>Trained and used an autoregressive integrated moving average model to predict stock futures using data from Google BigQuery</li>
+                            </dl>
+                        </div>
+                    </div>
+                    <!-- /timeline-block -->
+                </div>
+                <!-- /timeline-wrap -->
+            </div>
+            <!-- /col-twelve -->
+        </div>
+        <!-- /work-experience-timeline -->
+    </section>
 
-	            <div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/clouds.jpg"alt="Clouds">
-	                  <a href="#modal-03" class="overlay">             		                  
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Clouds</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Web Design
-		     					      </span>		     		
-		     					   </div> 	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
+    <section id="education" class="grey-section">
+        <div class="row education-header">
+            <div class="col-twelve">
+                <h1>Education</h1>
+            </div>
+        </div>
 
-	            <div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/beetle.jpg" alt="Beetle">
-	                  <a href="#modal-04" class="overlay">                  	                 
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Beetle</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Branding
-		     					      </span>		     		
-		     					   </div>  	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->     
+        <div class="row education-timeline">
+            <div class="col-twelve">
+                <div class="timeline-wrap">
+                    <div class="timeline-block">
+                        <div class="timeline-ico">
+                            <i class="fa fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-header">
+                            <h3>Bachelor of Science</h3>
+                            <h3>Computer & Systems</h3>
+                            <h3>Engineering</h3>
+                            <p>August 2016 - May 2020</p>
+                        </div>
+                        <div class="timeline-content">
+                            <a href="https://www.rpi.edu/">
+                                <h3>Rensselaer Polytechnic Institute</h3>
+                            </a>
+                            <h3>Concentration:</h3>
+                            <p>Artificial Intelligence & Data</p>
+                            <h3>Clubs:</h3>
+                            <p>HackRPI, Sigma Alpha Epsilon, RPI Engineering Ambassadors, Foundry Club, Fencing Club, Rensselaer Center for Open Source (RCOS), Phalanx Honor Society, Order of Omega Greek Honor Society</p>
+                            <h3>Awards:</h3>
+                            <dl>
+                                <li>Dean’s Honor List</li>
+                                <li>Lynchpin Award</li>
+                                <li>Winner of the ESHIP.2 Solutions Challenge (a.k.a. Change The World Challenge)</li>
+                                <li>White Key Award</li>
+                                <li>Rensselaer Medal Award</li>
+                            </dl>
+                        </div>
+                    </div>
+                    <!-- /timeline-block -->
+                </div>
+            </div>
+        </div>
+    </section>
 
-	        		<div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/lighthouse.jpg" alt="Lighthouse">
-	                  <a href="#modal-05" class="overlay">             		                  
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Lighthouse</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Web Development
-		     					      </span>		     		
-		     					   </div> 	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->
+    <!-- research-experience section
+   ================================================== -->
+    <section id="research-experience" class="grey-section">
+        <div class="row research-experience-header">
+            <div class="col-twelve">
+                <h1>Research Experience</h1>
+            </div>
+        </div>
 
-	            <div class="bgrid folio-item">
-	               <div class="item-wrap">
-	               	<img src="images/portfolio/salad.jpg" alt="Salad">
-	                  <a href="#modal-06" class="overlay">
-	                     <div class="folio-item-table">
-	                     	<div class="folio-item-cell">
-	                     		<h3 class="folio-title">Salad</h3>	     					    
-		     					    	<span class="folio-types">
-		     					       	  Branding
-		     					      </span>		     		
-		     					   </div>	                      	
-	                     </div>                    
-	                  </a>
-	               </div>
-	        		</div> <!-- /folio-item -->   
+        <div class="row research-experience-timeline">
+            <div class="col-twelve">
+                <div class="timeline-wrap">
+                    <div class="timeline-block">
+                        <div class="timeline-ico">
+                            <i class="fa fa-university"></i>
+                        </div>
+                        <div class="timeline-header">
+                            <h3>Undergraduate Researcher</h3>
+                            <p>January 2019 - May 2020</p>
+                        </div>
+                        <div class="timeline-content">
+                            <a href="https://cisl.rpi.edu/">
+                                <h3>Cognitive & Immersive Systems Lab</h3>
+                            </a>
+                            <h3>Advisor:
+                                <a href="https://www.linkedin.com/in/huisu?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAEKKWMBtAfXDTL0RTp7wWWH3BHQO01PwSw&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BEveMmad3SMGQE25pdZ%2FlZA%3D%3D">
+                                    Dr. Hui Su
+                                </a>
+                            </h3>
+                            <dl>
+                                <li>Developed a multimodal open-domain question-answering system for the Dialog State Tracking Challenge (DSTC), using BiGRUs, multimodal fusion, attention, teacher forcing, and a new data augmentation technique</li>
+                                <li>Created a visual question-answering system that uses the Visual Genome dataset and scene graphs for providing cross-task attention learning with weak supervision.</li>
+                            </dl>
+                            <div class="video-container">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/1W5R3SIG54A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /timeline-block -->
 
-	            <!-- modal popups - begin
+                    <div class="timeline-block">
+                        <div class="timeline-ico">
+                            <i class="fa fa-university"></i>
+                        </div>
+                        <div class="timeline-header">
+                            <h3>Undergraduate Researcher</h3>
+                            <p>May 2017 - December 2018</p>
+                        </div>
+                        <div class="timeline-content">
+                            <a href="https://curent.utk.edu/">
+                                <h3>Center for Ultra-Wide-Area Resilient Electric Energy Transmission Networks (CURENT)</h3>
+                            </a>
+                            <h3>Advisor:
+                                <a href="https://www.ecse.rpi.edu/~chowj/">
+                                    Dr. Joe Chow
+                                </a>
+                            </h3>
+                            <dl>
+                                <li>Helped create a week-long electric grid summer camp for high school students.</li>
+                                <li>Reverse-engineered a photovoltaic device for wireless solar radiation data recording and designed a 6 module high school curriculum based on the construction of the device.</li>
+                                <li>Professional recorded every presentation and hands-on activity for the RPI Engineering Ambassadors’ online education platform. </li>
+                                <li>Taught my curriculum to 20 high school students that resulted in a statistically significant increase in the students’ interest in STEM and confidence in performing hands-on projects.</li>
+                            </dl>
+                            <h3>Highlight Reel:</h3>
+                            <div class="slideshow-container">
+                                <div class="mySlides fade">
+                                    <div class="numbertext">1 / 9</div>
+                                    <img src="/images/research/image1.jpg" style="width:100%">
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext">2 / 9</div>
+                                    <img src="/images/research/image2.jpg" style="width:100%">
+                                    <div class="text">Caption Text</div>
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext">3 / 9</div>
+                                    <img src="/images/research/image3.jpg" style="width:100%">
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext">4 / 9</div>
+                                    <img src="/images/research/image4.jpg" style="width:100%">
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext">5 / 9</div>
+                                    <img src="/images/research/image5.jpg" style="width:100%">
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext">6 / 9</div>
+                                    <img src="/images/research/image6.jpg" style="width:100%">
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext">7 / 9</div>
+                                    <img src="/images/research/image7.jpg" style="width:100%">
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext">8 / 9</div>
+                                    <img src="/images/research/image8.jpg" style="width:100%">
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext">9 / 9</div>
+                                    <img src="/images/research/image9.jpg" style="width:100%">
+                                </div>
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            </div>
+                            <div style="padding-top: 5%;">
+                                <h3>Curriculum Videos:</h3>
+                                <div class="row">
+                                    <div class="col-four">
+                                        <a href="https://youtube.com/playlist?list=PL4Eo8aYQOMJl5TidLEB9FScdozF4vkQHu">
+                                            <h5 style="color:#FF0077;">Playlist Link</h5>
+                                        </a>
+                                    </div>
+                                    <div class="col-five">
+                                        <a href="https://youtube.com/playlist?list=PL4Eo8aYQOMJmdHVwO-mtXwxAXk1xw3mk2">
+                                            <h5 style="color:#FF0077;">Updated Playlist Link</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-container">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/cfC5avisrTM?start=1208" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /timeline-block -->
+        </div>
+        <!-- /timeline-wrap -->
+        </div>
+        <!-- /col-twelve -->
+        </div>
+        <!-- /research-experience-timeline -->
+    </section>
+
+    <!-- Portfolio Section
+   ================================================== -->
+    <section id="portfolio">
+
+        <div class="row section-intro">
+            <div class="col-twelve">
+
+                <h5>Portfolio</h5>
+                <h1>Check Out Some of My Works.</h1>
+
+                <p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+
+            </div>
+        </div>
+        <!-- /section-intro-->
+
+        <div class="row portfolio-content">
+
+            <div class="col-twelve">
+
+                <!-- portfolio-wrapper -->
+                <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
+
+                    <div class="bgrid folio-item">
+                        <div class="item-wrap">
+                            <img src="images/portfolio/liberty.jpg" alt="Liberty">
+                            <a href="#modal-01" class="overlay">
+                                <div class="folio-item-table">
+                                    <div class="folio-item-cell">
+                                        <h3 class="folio-title">Liberty</h3>
+                                        <span class="folio-types">
+											Graphic Design
+										</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /folio-item -->
+
+                    <div class="bgrid folio-item">
+                        <div class="item-wrap">
+                            <img src="images/portfolio/shutterbug.jpg" alt="Shutterbug">
+                            <a href="#modal-02" class="overlay">
+                                <div class="folio-item-table">
+                                    <div class="folio-item-cell">
+                                        <h3 class="folio-title">Shutterbug</h3>
+                                        <span class="folio-types">
+											Web Design
+										</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /folio-item -->
+
+                    <div class="bgrid folio-item">
+                        <div class="item-wrap">
+                            <img src="images/portfolio/clouds.jpg" alt="Clouds">
+                            <a href="#modal-03" class="overlay">
+                                <div class="folio-item-table">
+                                    <div class="folio-item-cell">
+                                        <h3 class="folio-title">Clouds</h3>
+                                        <span class="folio-types">
+											Web Design
+										</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /folio-item -->
+
+                    <div class="bgrid folio-item">
+                        <div class="item-wrap">
+                            <img src="images/portfolio/beetle.jpg" alt="Beetle">
+                            <a href="#modal-04" class="overlay">
+                                <div class="folio-item-table">
+                                    <div class="folio-item-cell">
+                                        <h3 class="folio-title">Beetle</h3>
+                                        <span class="folio-types">
+											Branding
+										</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /folio-item -->
+
+                    <div class="bgrid folio-item">
+                        <div class="item-wrap">
+                            <img src="images/portfolio/lighthouse.jpg" alt="Lighthouse">
+                            <a href="#modal-05" class="overlay">
+                                <div class="folio-item-table">
+                                    <div class="folio-item-cell">
+                                        <h3 class="folio-title">Lighthouse</h3>
+                                        <span class="folio-types">
+											Web Development
+										</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /folio-item -->
+
+                    <div class="bgrid folio-item">
+                        <div class="item-wrap">
+                            <img src="images/portfolio/salad.jpg" alt="Salad">
+                            <a href="#modal-06" class="overlay">
+                                <div class="folio-item-table">
+                                    <div class="folio-item-cell">
+                                        <h3 class="folio-title">Salad</h3>
+                                        <span class="folio-types">
+											Branding
+										</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /folio-item -->
+
+                    <!-- modal popups - begin
 	            ============================================================= -->
-	            <div id="modal-01" class="popup-modal slider mfp-hide">	
+                    <div id="modal-01" class="popup-modal slider mfp-hide">
 
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/m-liberty.jpg" alt="" />
-				     	</div>      	
+                        <div class="media">
+                            <img src="images/portfolio/modals/m-liberty.jpg" alt="" />
+                        </div>
 
-					   <div class="description-box">
-					      <h4>Liberty</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                        <div class="description-box">
+                            <h4>Liberty</h4>
+                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
 
-					      <div class="categories">Web Development</div>			               
-					   </div>
+                            <div class="categories">Web Development</div>
+                        </div>
 
-			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
+                        <div class="link-box">
+                            <a href="http://www.behance.net">Details</a>
+                            <a href="#" class="popup-modal-dismiss">Close</a>
+                        </div>
 
-				   </div> <!-- /modal-01 -->
+                    </div>
+                    <!-- /modal-01 -->
 
-				   <div id="modal-02" class="popup-modal slider mfp-hide">	
+                    <div id="modal-02" class="popup-modal slider mfp-hide">
 
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/m-shutterbug.jpg" alt="" />
-				     	</div>      	
+                        <div class="media">
+                            <img src="images/portfolio/modals/m-shutterbug.jpg" alt="" />
+                        </div>
 
-					   <div class="description-box">
-					      <h4>Shutterbug</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                        <div class="description-box">
+                            <h4>Shutterbug</h4>
+                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
 
-					      <div class="categories">Web Design</div>			               
-					   </div>
+                            <div class="categories">Web Design</div>
+                        </div>
 
-			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
+                        <div class="link-box">
+                            <a href="http://www.behance.net">Details</a>
+                            <a href="#" class="popup-modal-dismiss">Close</a>
+                        </div>
 
-				   </div> <!-- /modal-02 -->
+                    </div>
+                    <!-- /modal-02 -->
 
-				   <div id="modal-03" class="popup-modal slider mfp-hide">	
+                    <div id="modal-03" class="popup-modal slider mfp-hide">
 
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/m-clouds.jpg" alt="" />
-				     	</div>      	
+                        <div class="media">
+                            <img src="images/portfolio/modals/m-clouds.jpg" alt="" />
+                        </div>
 
-					   <div class="description-box">
-					      <h4>Clouds</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                        <div class="description-box">
+                            <h4>Clouds</h4>
+                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
 
-					      <div class="categories">Web Design</div>			               
-					   </div>
+                            <div class="categories">Web Design</div>
+                        </div>
 
-			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
+                        <div class="link-box">
+                            <a href="http://www.behance.net">Details</a>
+                            <a href="#" class="popup-modal-dismiss">Close</a>
+                        </div>
 
-				   </div> <!-- /modal-03 -->
+                    </div>
+                    <!-- /modal-03 -->
 
-				   <div id="modal-04" class="popup-modal slider mfp-hide">	
+                    <div id="modal-04" class="popup-modal slider mfp-hide">
 
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/m-beetle.jpg" alt="" />
-				     	</div>      	
+                        <div class="media">
+                            <img src="images/portfolio/modals/m-beetle.jpg" alt="" />
+                        </div>
 
-					   <div class="description-box">
-					      <h4>Beetle</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                        <div class="description-box">
+                            <h4>Beetle</h4>
+                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
 
-					      <div class="categories">Branding</div>			               
-					   </div>
+                            <div class="categories">Branding</div>
+                        </div>
 
-			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
+                        <div class="link-box">
+                            <a href="http://www.behance.net">Details</a>
+                            <a href="#" class="popup-modal-dismiss">Close</a>
+                        </div>
 
-				   </div> <!-- /modal-04 -->
+                    </div>
+                    <!-- /modal-04 -->
 
-				   <div id="modal-05" class="popup-modal slider mfp-hide">	
+                    <div id="modal-05" class="popup-modal slider mfp-hide">
 
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/m-lighthouse.jpg" alt="" />
-				     	</div>      	
+                        <div class="media">
+                            <img src="images/portfolio/modals/m-lighthouse.jpg" alt="" />
+                        </div>
 
-					   <div class="description-box">
-					      <h4>Lighthouse</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                        <div class="description-box">
+                            <h4>Lighthouse</h4>
+                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
 
-					      <div class="categories">Web Development</div>			               
-					   </div>
+                            <div class="categories">Web Development</div>
+                        </div>
 
-			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
+                        <div class="link-box">
+                            <a href="http://www.behance.net">Details</a>
+                            <a href="#" class="popup-modal-dismiss">Close</a>
+                        </div>
 
-				   </div> <!-- /modal-05 -->
+                    </div>
+                    <!-- /modal-05 -->
 
-				   <div id="modal-06" class="popup-modal slider mfp-hide">	
+                    <div id="modal-06" class="popup-modal slider mfp-hide">
 
-				     	<div class="media">
-				     		<img src="images/portfolio/modals/m-salad.jpg" alt="" />
-				     	</div>      	
+                        <div class="media">
+                            <img src="images/portfolio/modals/m-salad.jpg" alt="" />
+                        </div>
 
-					   <div class="description-box">
-					      <h4>Salad</h4>		      
-					      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+                        <div class="description-box">
+                            <h4>Salad</h4>
+                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
 
-					      <div class="categories">Branding</div>			               
-					   </div>
+                            <div class="categories">Branding</div>
+                        </div>
 
-			         <div class="link-box">
-			            <a href="http://www.behance.net">Details</a>
-					      <a href="#" class="popup-modal-dismiss">Close</a>
-			         </div>		      
+                        <div class="link-box">
+                            <a href="http://www.behance.net">Details</a>
+                            <a href="#" class="popup-modal-dismiss">Close</a>
+                        </div>
 
-				   </div> <!-- /modal-06 -->
+                    </div>
+                    <!-- /modal-06 -->
 
 
-				   <!-- modal popups - end
+                    <!-- modal popups - end
 	            ============================================================= -->
 
-	         </div> <!-- /portfolio-wrapper --> 
+                </div>
+                <!-- /portfolio-wrapper -->
 
-   		</div>  <!-- /twelve -->   
+            </div>
+            <!-- /twelve -->
 
-   	</div> <!-- /portfolio-content --> 
-		
-	</section> <!-- /portfolio --> 
+        </div>
+        <!-- /portfolio-content -->
+
+    </section>
+    <!-- /portfolio -->
 
 
-	<!-- CTA Section
+    <!-- CTA Section
    ================================================== -->
-	<section id="cta" class="grey-section">
+    <section id="cta" class="grey-section">
 
-   	<div class="row cta-content">
+        <div class="row cta-content">
 
-   		<div class="col-twelve section-ads">  
+            <div class="col-twelve section-ads">
 
-	     		<h2 class="h01"><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Styleshout Recommends Dreamhost.</a></h2>
+                <h2 class="h01"><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Styleshout Recommends
+						Dreamhost.</a></h2>
 
-		      <p class="lead">
-		      Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT"><span>DreamHost</span></a>.
-				Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>. 
-				<!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. -->	
-				</p>
+                <p class="lead">
+                    Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT"><span>DreamHost</span></a>. Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>.
+                    <!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. -->
+                </p>
 
-				<div class="action">
-			      <a class="button button-primary large" href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Sign Up Now</a>
-		      </div>		     	
+                <div class="action">
+                    <a class="button button-primary large" href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Sign
+						Up Now</a>
+                </div>
 
-   		</div>
+            </div>
 
-   	</div> <!-- /cta-content -->
+        </div>
+        <!-- /cta-content -->
 
-   </section> <!-- /cta --> 
+    </section>
+    <!-- /cta -->
 
-	
-	<!-- services Section
+
+    <!-- services Section
    ================================================== -->
-	<section id="services">
+    <section id="services">
 
-		<div class="overlay"></div>
+        <div class="overlay"></div>
 
-		<div class="row section-intro">
-   		<div class="col-twelve">
+        <div class="row section-intro">
+            <div class="col-twelve">
 
-   			<h5>Services</h5>
-   			<h1>What Can I Do For You?</h1>
+                <h5>Services</h5>
+                <h1>What Can I Do For You?</h1>
 
-   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+                <p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
 
-   		</div>   		
-   	</div> <!-- /section-intro -->
+            </div>
+        </div>
+        <!-- /section-intro -->
 
-   	<div class="row services-content">
+        <div class="row services-content">
 
-   		<div id="owl-slider" class="owl-carousel services-list">
+            <div id="owl-slider" class="owl-carousel services-list">
 
-	      	<div class="service">	
+                <div class="service">
 
-	      		<span class="icon"><i class="icon-earth"></i></span>            
+                    <span class="icon"><i class="icon-earth"></i></span>
 
-	            <div class="service-content">	
+                    <div class="service-content">
 
-	            	 <h3>Webdesign</h3>
+                        <h3>Webdesign</h3>
 
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	         		</p>
-	         		
-	         	</div> 	         	 
+                        <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                            voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>
 
-				</div> <!-- /service -->
+                    </div>
 
-				<div class="service">	
+                </div>
+                <!-- /service -->
 
-					<span class="icon"><i class="icon-window"></i></span>                          
+                <div class="service">
 
-	            <div class="service-content">	
+                    <span class="icon"><i class="icon-window"></i></span>
 
-	            	<h3>Web Development</h3>  
+                    <div class="service-content">
 
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	         		</p>
+                        <h3>Web Development</h3>
 
-	            </div>	                          
+                        <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                            voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>
 
-			   </div> <!-- /service -->
+                    </div>
 
-			   <div class="service">
+                </div>
+                <!-- /service -->
 
-			   	<span class="icon"><i class="icon-paint-brush"></i></span>		            
+                <div class="service">
 
-	            <div class="service-content">
+                    <span class="icon"><i class="icon-paint-brush"></i></span>
 
-	            	<h3>Branding</h3>
+                    <div class="service-content">
 
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	        			</p> 
+                        <h3>Branding</h3>
 
-	            </div> 	            	               
+                        <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                            voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>
 
-			   </div> <!-- /service -->
+                    </div>
 
-				<div class="service">
+                </div>
+                <!-- /service -->
 
-					<span class="icon"><i class="icon-toggles"></i></span>	              
+                <div class="service">
 
-	            <div class="service-content">
+                    <span class="icon"><i class="icon-toggles"></i></span>
 
-	            	<h3>UI/UX Design</h3>
+                    <div class="service-content">
 
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	         		</p> 
-	         		
-	            </div>                
+                        <h3>UI/UX Design</h3>
 
-				</div> <!-- /service -->
+                        <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                            voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>
 
-			   <div class="service">
+                    </div>
 
-			   	<span class="icon"><i class="icon-image"></i></span>	            
+                </div>
+                <!-- /service -->
 
-	            <div class="service-content">
+                <div class="service">
 
-	            	<h3>Graphics Design</h3>
+                    <span class="icon"><i class="icon-image"></i></span>
 
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	        			</p> 
+                    <div class="service-content">
 
-	            </div>	               
+                        <h3>Graphics Design</h3>
 
-			   </div> <!-- /service -->
+                        <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                            voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>
 
-			   <div class="service">
+                    </div>
 
-			   	<span class="icon"><i class="icon-chat"></i></span>	   	           
+                </div>
+                <!-- /service -->
 
-	            <div class="service-content">
+                <div class="service">
 
-	            	 <h3>Consultancy</h3>
+                    <span class="icon"><i class="icon-chat"></i></span>
 
-		            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	        			</p> 
-	        			
-	            </div>	               
+                    <div class="service-content">
 
-			   </div> <!-- /service -->
+                        <h3>Consultancy</h3>
 
-	      </div> <!-- /services-list -->
-   		
-   	</div> <!-- /services-content -->
-		
-	</section> <!-- /services -->	
+                        <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                            voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                        </p>
+
+                    </div>
+
+                </div>
+                <!-- /service -->
+
+            </div>
+            <!-- /services-list -->
+
+        </div>
+        <!-- /services-content -->
+
+    </section>
+    <!-- /services -->
 
 
-	<!-- stats Section
+    <!-- stats Section
    ================================================== -->
-	<section id="stats" class="count-up">
+    <section id="stats" class="count-up">
 
-		<div class="row">
-			<div class="col-twelve">
+        <div class="row">
+            <div class="col-twelve">
 
-				<div class="block-1-6 block-s-1-3 block-tab-1-2 block-mob-full stats-list">
+                <div class="block-1-6 block-s-1-3 block-tab-1-2 block-mob-full stats-list">
 
-					<div class="bgrid stat">
+                    <div class="bgrid stat">
 
-						<div class="icon-part">
-							<i class="icon-pencil-ruler"></i>
-						</div>
+                        <div class="icon-part">
+                            <i class="icon-pencil-ruler"></i>
+                        </div>
 
-						<h3 class="stat-count">
-							1500
-						</h3>
+                        <h3 class="stat-count">
+                            1500
+                        </h3>
 
-						<h5 class="stat-title">
-							Projects Completed
-						</h5>
+                        <h5 class="stat-title">
+                            Projects Completed
+                        </h5>
 
-					</div> <!-- /stat -->					
+                    </div>
+                    <!-- /stat -->
 
-					<div class="bgrid stat">
+                    <div class="bgrid stat">
 
-						<div class="icon-part">
-							<i class="icon-users"></i>
-						</div>
+                        <div class="icon-part">
+                            <i class="icon-users"></i>
+                        </div>
 
-						<h3 class="stat-count">
-							900
-						</h3>
+                        <h3 class="stat-count">
+                            900
+                        </h3>
 
-						<h5 class="stat-title">
-							Happy Clients
-						</h5>
+                        <h5 class="stat-title">
+                            Happy Clients
+                        </h5>
 
-					</div> <!-- /stat -->
+                    </div>
+                    <!-- /stat -->
 
-					<div class="bgrid stat">
+                    <div class="bgrid stat">
 
-						<div class="icon-part">
-							<i class="icon-badge"></i>
-						</div>
+                        <div class="icon-part">
+                            <i class="icon-badge"></i>
+                        </div>
 
-						<h3 class="stat-count">
-							200
-						</h3>
+                        <h3 class="stat-count">
+                            200
+                        </h3>
 
-						<h5 class="stat-title">
-							Awards Received
-						</h5>
+                        <h5 class="stat-title">
+                            Awards Received
+                        </h5>
 
-					</div> <!-- /stat -->									
+                    </div>
+                    <!-- /stat -->
 
-					<div class="bgrid stat">
+                    <div class="bgrid stat">
 
-						<div class="icon-part">
-							<i class="icon-light-bulb"></i>
-						</div>
+                        <div class="icon-part">
+                            <i class="icon-light-bulb"></i>
+                        </div>
 
-						<h3 class="stat-count">
-							120
-						</h3>
+                        <h3 class="stat-count">
+                            120
+                        </h3>
 
-						<h5 class="stat-title">
-							Crazy Ideas
-						</h5>
+                        <h5 class="stat-title">
+                            Crazy Ideas
+                        </h5>
 
-					</div> <!-- /stat -->
+                    </div>
+                    <!-- /stat -->
 
-					<div class="bgrid stat">
+                    <div class="bgrid stat">
 
-						<div class="icon-part">
-							<i class="icon-cup"></i>
-						</div>
+                        <div class="icon-part">
+                            <i class="icon-cup"></i>
+                        </div>
 
-						<h3 class="stat-count">
-							1500
-						</h3>
+                        <h3 class="stat-count">
+                            1500
+                        </h3>
 
-						<h5 class="stat-title">
-							Coffee Cups
-						</h5>
+                        <h5 class="stat-title">
+                            Coffee Cups
+                        </h5>
 
-					</div> <!-- /stat -->
+                    </div>
+                    <!-- /stat -->
 
-					<div class="bgrid stat">
+                    <div class="bgrid stat">
 
-						<div class="icon-part">
-							<i class="icon-clock"></i>
-						</div>
+                        <div class="icon-part">
+                            <i class="icon-clock"></i>
+                        </div>
 
-						<h3 class="stat-count">
-							7200
-						</h3>
+                        <h3 class="stat-count">
+                            7200
+                        </h3>
 
-						<h5 class="stat-title">
-							Hours
-						</h5>
+                        <h5 class="stat-title">
+                            Hours
+                        </h5>
 
-					</div> <!-- /stat -->
+                    </div>
+                    <!-- /stat -->
 
-				</div> <!-- /stats-list -->
+                </div>
+                <!-- /stats-list -->
 
-			</div> <!-- /twelve -->
-		</div> <!-- /row -->
+            </div>
+            <!-- /twelve -->
+        </div>
+        <!-- /row -->
 
-	</section> <!-- /stats -->
+    </section>
+    <!-- /stats -->
 
-	
-   <!-- contact
+
+    <!-- contact
    ================================================== -->
-	<section id="contact">
+    <section id="contact">
 
-		<div class="row section-intro">
-   		<div class="col-twelve">
+        <div class="row section-intro">
+            <div class="col-twelve">
 
-   			<h5>Contact</h5>
-   			<h1>I'd Love To Hear From You.</h1>
+                <h5>Contact</h5>
+                <h1>I'd Love To Hear From You.</h1>
 
-   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+                <p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
 
-   		</div> 
-   	</div> <!-- /section-intro -->
+            </div>
+        </div>
+        <!-- /section-intro -->
 
-   	<div class="row contact-form">
+        <div class="row contact-form">
 
-   		<div class="col-twelve">
+            <div class="col-twelve">
 
-            <!-- form -->
-            <form name="contactForm" id="contactForm" method="post" action="">
-      			<fieldset>
+                <!-- form -->
+                <form name="contactForm" id="contactForm" method="post" action="">
+                    <fieldset>
 
-                  <div class="form-field">
- 						   <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
-                  </div>
-                  <div class="form-field">
-	      			   <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
-	               </div>
-                  <div class="form-field">
-	     				   <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
-	               </div>                       
-                  <div class="form-field">
-	                 	<textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
-	               </div>                      
-                 <div class="form-field">
-                     <button class="submitform">Submit</button>
-                     <div id="submit-loader">
-                        <div class="text-loader">Sending...</div>                             
-       				      <div class="s-loader">
-								  	<div class="bounce1"></div>
-								  	<div class="bounce2"></div>
-								  	<div class="bounce3"></div>
-								</div>
-							</div>
-                  </div>
+                        <div class="form-field">
+                            <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
+                        </div>
+                        <div class="form-field">
+                            <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
+                        </div>
+                        <div class="form-field">
+                            <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
+                        </div>
+                        <div class="form-field">
+                            <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
+                        </div>
+                        <div class="form-field">
+                            <button class="submitform">Submit</button>
+                            <div id="submit-loader">
+                                <div class="text-loader">Sending...</div>
+                                <div class="s-loader">
+                                    <div class="bounce1"></div>
+                                    <div class="bounce2"></div>
+                                    <div class="bounce3"></div>
+                                </div>
+                            </div>
+                        </div>
 
-      			</fieldset>
-      		</form> <!-- Form End -->
+                    </fieldset>
+                </form>
+                <!-- Form End -->
 
-            <!-- contact-warning -->
-            <div id="message-warning">            	
-            </div>            
-            <!-- contact-success -->
-      		<div id="message-success">
-               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-      		</div>
+                <!-- contact-warning -->
+                <div id="message-warning">
+                </div>
+                <!-- contact-success -->
+                <div id="message-success">
+                    <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+                </div>
 
-         </div> <!-- /col-twelve -->
-   		
-   	</div> <!-- /contact-form -->
+            </div>
+            <!-- /col-twelve -->
 
-   	<div class="row contact-info">
+        </div>
+        <!-- /contact-form -->
 
-   		<div class="col-four tab-full">
+        <div class="row contact-info">
 
-   			<div class="icon">
-   				<i class="icon-pin"></i>
-   			</div>
+            <div class="col-four tab-full">
 
-   			<h5>Where to find me</h5>
+                <div class="icon">
+                    <i class="icon-pin"></i>
+                </div>
 
-   			<p>
-            1600 Amphitheatre Parkway<br>
-            Mountain View, CA<br>
-            94043 US
-            </p>
+                <h5>Where to find me</h5>
 
-   		</div>
+                <p>
+                    1600 Amphitheatre Parkway<br> Mountain View, CA<br> 94043 US
+                </p>
 
-   		<div class="col-four tab-full collapse">
+            </div>
 
-   			<div class="icon">
-   				<i class="icon-mail"></i>
-   			</div>
+            <div class="col-four tab-full collapse">
 
-   			<h5>Email Me At</h5>
+                <div class="icon">
+                    <i class="icon-mail"></i>
+                </div>
 
-   			<p>someone@kardswebsite.com<br>
-			   	info@kardswebsite.com			     
-			   </p>
+                <h5>Email Me At</h5>
 
-   		</div>
+                <p>someone@kardswebsite.com<br> info@kardswebsite.com
+                </p>
 
-   		<div class="col-four tab-full">
+            </div>
 
-   			<div class="icon">
-   				<i class="icon-phone"></i>
-   			</div>
+            <div class="col-four tab-full">
 
-   			<h5>Call Me At</h5>
+                <div class="icon">
+                    <i class="icon-phone"></i>
+                </div>
 
-   			<p>Phone: (+63) 555 1212<br>
-			   	Mobile: (+63) 555 0100<br>
-			     	Fax: (+63) 555 0101
-			   </p>
+                <h5>Call Me At</h5>
 
-   		</div>
-   		
-   	</div> <!-- /contact-info -->
-		
-	</section> <!-- /contact -->
+                <p>Phone: (+63) 555 1212<br> Mobile: (+63) 555 0100<br> Fax: (+63) 555 0101
+                </p>
+
+            </div>
+
+        </div>
+        <!-- /contact-info -->
+
+    </section>
+    <!-- /contact -->
 
 
-   <!-- footer
+    <!-- footer
    ================================================== -->
 
-   <footer>
-     	<div class="row">
+    <footer>
+        <div class="row">
 
-     		<div class="col-six tab-full pull-right social">
+            <div class="col-six tab-full pull-right social">
 
-     			<ul class="footer-social">        
-					<li><a href="https://github.com/IanSteenstra"><i class="fa fa-github"></i></a></li>
-					<li><a href="https://www.linkedin.com/in/ian-steenstra"><i class="fa fa-linkedin"></i></a></li>
-			   </ul> 
-	      		
-	      </div>
+                <ul class="footer-social">
+                    <li><a href="https://github.com/IanSteenstra"><i class="fa fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/ian-steenstra"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
 
-      	<div class="col-six tab-full">
-	      	<div class="copyright">
-		        	<span>© Copyright Kards 2016.</span> 
-		        	<span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>	         	
-		         </div>		                  
-	      	</div>
+            </div>
 
-	      	<div id="go-top">
-		         <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
-		      </div>
+            <div class="col-six tab-full">
+                <div class="copyright">
+                    <span>© Copyright Kards 2016.</span>
+                    <span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>
+                </div>
+                <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            </div>
 
-      	</div> <!-- /row -->     	
-   </footer>  
 
-   <div id="preloader"> 
-    	<div id="loader"></div>
-   </div> 
+            <div id="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-long-arrow-up"></i></a>
+            </div>
 
-   <!-- Java Script
-   ================================================== --> 
-   <script src="js/jquery-2.1.3.min.js"></script>
-   <script src="js/plugins.js"></script>
-   <script src="js/main.js"></script>
+        </div>
+        <!-- /row -->
+    </footer>
+
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+    <!-- Java Script
+   ================================================== -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
 
 </body>
 
