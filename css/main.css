@@ -106,6 +106,70 @@ a:hover {
 }
 
 
+/**
+ * slideshow - (_document-setup.scss)
+ * -------------------------------------------------------------------
+ */
+
+* {
+    box-sizing: border-box
+}
+
+.mySlides1,
+.mySlides2 {
+    display: none
+}
+
+img {
+    vertical-align: middle;
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* On hover, add a grey background color */
+
+.prev:hover,
+.next:hover {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+
 /** 
  * ===================================================================
  * 03. typography & general theme styles - (_document-setup.scss)
@@ -1743,7 +1807,7 @@ header .logo a {
     .about-content h3 {
         text-align: center;
     }
-    .about-content .info-list,
+    .about .info-list,
     .about-content .skills {
         margin-bottom: 4.2rem;
     }
@@ -2218,7 +2282,7 @@ header .logo a {
 
 /** 
  * ===================================================================
- * 12. work-experience - (_layout.scss)
+ * 12. research-experience - (_layout.scss)
  *
  * ------------------------------------------------------------------- 
  */
@@ -2417,6 +2481,91 @@ header .logo a {
     #research-experience .timeline-header,
     #research-experience .timeline-content {
         padding-left: 5.5rem;
+    }
+}
+
+
+/** 
+ * ===================================================================
+ * 11. publications & articles - (_layout.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+
+#publications-articles {
+    background: #FFFFFF;
+    padding-top: 12rem;
+}
+
+.intro-info {
+    margin-top: 4.2rem;
+    margin-right: -30px;
+    margin-left: -30px;
+}
+
+.intro-info img {
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    margin: .9rem 0 0 0;
+    float: left;
+}
+
+.intro-info .lead {
+    text-align: left;
+    padding-left: 20rem;
+}
+
+
+/**
+ * responsive:
+ * publications-articles
+ * ------------------------------------------------------------------- 
+ */
+
+@media only screen and (max-width:1024px) {
+    .intro-info {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .intro-info img {
+        height: 12.0rem;
+        width: 12.0rem;
+    }
+    .intro-info .lead {
+        padding-left: 11rem;
+    }
+    .publications-articles-content h3 {
+        text-align: center;
+    }
+    .publications-articles-content .info-list,
+    .publications-articles-content .skills {
+        margin-bottom: 4.2rem;
+    }
+    .button-section .button {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+    .button-section [class*="col-"] .button:first-child {
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .intro-info {
+        text-align: center;
+        margin-top: 3rem;
+    }
+    .intro-info img {
+        float: none;
+        display: inline-block;
+    }
+    .intro-info .lead {
+        padding-left: 0;
+        text-align: center;
     }
 }
 
