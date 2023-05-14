@@ -1917,7 +1917,6 @@ header .top-bar {
  */
 
 #work-experience {
-    padding-top: 12rem;
     padding-bottom: 5rem;
 }
 
@@ -2290,6 +2289,7 @@ header .top-bar {
  */
 
 #research-experience {
+    padding-top: 12rem;
     padding-bottom: 5rem;
 }
 
