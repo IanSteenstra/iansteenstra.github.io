@@ -3429,6 +3429,9 @@ footer a:focus {
 
 footer .row {
     max-width: 900px;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically (optional) */
 }
 
 footer .social {
