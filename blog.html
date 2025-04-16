@@ -1,0 +1,213 @@
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Ian Steenstra - Blog</title>
+    <meta name="description" content="Blog posts by Ian Steenstra">
+    <meta name="author" content="Ian Steenstra">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS - Make sure paths are correct relative to blog.html
+    ================================================== -->
+    <link rel="stylesheet" href="css/flexboxgrid.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/vendor.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Styles for the Blog Page - LIGHT THEME for CONTENT AREA -->
+    <style>
+        /* Make the main blog area have a light background and dark text */
+        #blog-main {
+            padding-top: 12rem; /* Adjust as needed to clear the fixed header */
+            padding-bottom: 6rem;
+            background-color: #ffffff; /* White background */
+            color: #333333; /* Dark grey text for paragraphs */
+        }
+
+        /* Ensure section intro text is dark */
+        #blog-main .section-intro h1,
+        #blog-main .section-intro p.lead {
+            color: #111111; /* Very dark grey/black for main headings */
+        }
+
+        /* Style individual blog post containers */
+        .blog-post {
+            margin-bottom: 4rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid #dddddd; /* Lighter border */
+        }
+        .blog-post:last-child {
+            border-bottom: none;
+        }
+
+        /* Style blog post titles */
+        .blog-post h2 {
+            margin-bottom: 0.5rem;
+        }
+        .blog-post h2 a {
+             color: #0d6efd; /* A standard blue for links */
+             text-decoration: none;
+        }
+         .blog-post h2 a:hover {
+             color: #0a58ca; /* Darker blue on hover */
+             text-decoration: underline;
+         }
+
+        /* Style the meta text (date/author) */
+        .blog-post .meta {
+            font-size: 1.4rem;
+            color: #666666; /* Medium grey for meta text */
+            margin-bottom: 1.5rem;
+        }
+
+        /* Ensure paragraph text within posts is the default dark color */
+        .blog-post p {
+            color: #333333; /* Explicitly set paragraph text color if needed */
+            line-height: 1.6; /* Improve readability */
+        }
+
+        /* Style the "Read More" button for light background */
+        .blog-post .button,
+        .blog-post .button:visited {
+            /* Reuse existing button styles but ensure contrast */
+            background-color: #0d6efd; /* Blue background */
+            color: #ffffff; /* White text */
+            border: 1px solid #0d6efd;
+            /* Inherit padding, display etc. from base.css/main.css */
+        }
+
+        .blog-post .button:hover,
+        .blog-post .button:focus {
+            background-color: #0a58ca; /* Darker blue */
+            border-color: #0a58ca;
+            color: #ffffff;
+        }
+
+        /* Optional: Style sidebar if you add one */
+        /*
+        .sidebar {
+             background-color: #f8f9fa; // Light grey for sidebar
+             padding: 2rem;
+             color: #333;
+        }
+        .sidebar h3 {
+            color: #111;
+        }
+        .sidebar a {
+            color: #0d6efd;
+        }
+        .sidebar a:hover {
+            color: #0a58ca;
+        }
+        */
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- header (Remains Dark) -->
+    <header>
+        <div class="row">
+            <div class="top-bar">
+                <a class="menu-toggle" href="#"><span>Menu</span></a>
+                <div>
+                    <a href="index.html">
+                         <h2 style="color:white; padding-top:21px; padding-left:43%;">Menu</h2>
+                    </a>
+                </div>
+                <nav id="main-nav-wrap">
+                    <ul class="main-navigation">
+                        <li> <a href="index.html#intro" title="">Home</a> </li>
+                        <li> <a href="index.html#about" title="">About Me</a> </li>
+                        <li> <a href="index.html#projects-roles" title="">Portfolio</a> </li>
+                        <li> <a href="index.html#skills" title="">Skills</a> </li>
+                        <li> <a href="index.html#research-experience" title="">Research Experience</a> </li>
+                        <li> <a href="index.html#work-experience" title="">Work Experience</a> </li>
+                        <li> <a href="index.html#education" title="">Education</a> </li>
+                        <li> <a href="index.html#publications-articles" title="">Publications & News Articles</a> </li>
+                        <li class="current"> <a href="blog.html" title="">Blog</a> </li>
+                    </ul>
+                </nav>
+            </div><!-- /top-bar -->
+        </div><!-- /row -->
+    </header><!-- /header -->
+
+    <!-- Main Blog Content Section (Now Light) -->
+    <section id="blog-main">
+        <div class="row section-intro">
+            <div class="col-twelve">
+                <h1>My Blog</h1>
+                <p class="lead">Thoughts, updates, and explorations.</p>
+            </div>
+        </div> <!-- /section-intro -->
+
+        <div class="row">
+            <div class="col-eight main-content"> <!-- Main content area -->
+
+                <!-- Start: Example Blog Post 1 -->
+                <article class="blog-post">
+                    <h2><a href="blog_post_ai_psych.html">AI Psychotherapy: Quality, Risks, and Evaluation</a></h2>
+                    <p class="meta">Posted on April 16, 2025 by Ian Steenstra</p>
+                    <p>
+                        AI psychotherapy presents both opportunities and significant risks, mirroring potential harms found in human therapy. This post reviews the landscape, emphasizing the crucial need for rigorous, specialized evaluation frameworks to ensure safety and quality of care before widespread adoption.
+                    </p>
+                    <p><a href="blog_post_ai_psych.html" class="button">Read More</a></p>
+                </article>
+                <!-- End: Example Blog Post 1 -->
+
+                 <!-- Add more blog post summaries here -->
+
+            </div> <!-- /main-content -->
+
+            <!-- Optional: Sidebar (styles added above if uncommented) -->
+            <!--
+            <div class="col-four sidebar">
+                ... sidebar content ...
+            </div>
+            -->
+
+        </div> <!-- /row -->
+    </section> <!-- /blog-main -->
+
+
+    <!-- footer (Remains Dark) -->
+     <footer>
+       <div class="row">
+         <div class="col-five">© Copyright Kards 2016. Design by <a href="http://www.styleshout.com/"> styleshout </a></div>
+         <div class="col-five">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+       </div>
+       <div class="row">
+         <div style="text-align: right; padding-top: 1rem;">
+             <a href="index.html" title="Back to Home"><i class="fa fa-home"></i> Back to Home</a>
+         </div>
+       </div>
+     </footer>
+
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
