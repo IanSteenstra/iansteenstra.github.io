@@ -1,0 +1,30 @@
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# Node
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Build output
+.DS_Store
+/dist/
+/build/
+/out/
+
+# Logs
+*.log
+
+# Misc
+.env
+.env.*
