@@ -10,12 +10,14 @@
     const setActiveNav = () => {
         if (!sections.length) return;
         const offset = 120;
+        const scrollPosition = window.scrollY + offset;
         let activeId = sections[0].id;
 
         for (const section of sections) {
-            const rect = section.getBoundingClientRect();
-            if (rect.top <= offset && rect.bottom > offset) {
+            const sectionTop = section.offsetTop;
+            if (sectionTop <= scrollPosition) {
                 activeId = section.id;
+            } else {
                 break;
             }
         }
