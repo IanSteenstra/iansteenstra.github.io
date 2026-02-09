@@ -488,9 +488,29 @@ section {
         text-align: center;
     }
     
+    nav {
+        position: static;
+        padding: 8px 0;
+        margin-bottom: 20px;
+    }
+
     nav ul {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 16px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 6px;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+
+    section {
+        scroll-margin-top: 20px;
     }
     
     .exp-header {
