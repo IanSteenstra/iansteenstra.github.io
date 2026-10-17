@@ -1,1 +1,4 @@
-theme: jekyll-theme-cayman
+# The site is hand-written HTML; Jekyll only copies files through.
+exclude:
+  - README.md
+  - tools

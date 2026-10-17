@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iansteenstra.github.io/sitemap.xml
