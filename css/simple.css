@@ -635,6 +635,10 @@ section {
     border: 1px solid var(--border-color);
 }
 
+.gallery-thumb img.crop-top {
+    object-position: 50% 35%;
+}
+
 .gallery-cta {
     margin-top: 15px;
     text-align: center;
